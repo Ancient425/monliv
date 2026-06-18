@@ -13,5 +13,4 @@ def on_message(msg):
     print("Received:", msg)
     socketio.send(f"Server received: {msg}")
 
-if __name__ == "__main__":
     socketio.run(app, debug=True)
