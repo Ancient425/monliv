@@ -10,6 +10,9 @@ const map = get(".map");
 const player = get(".player");
 const body = get("body")
 const buttons = get(".buttons")
+// temporary player id
+const num = Math.floor(Math.random() * 900) + 100;
+
 
 window.addEventListener("load", () => {
     map.style.top = "0px";
@@ -19,7 +22,7 @@ window.addEventListener("load", () => {
     player.style.height = `${TILE_DIMENTIONS}px`
     player.style.top = `${((Math.floor(VIEW_RADIUS / 2)) + 2) * TILE_DIMENTIONS}px`;
     player.style.left = `${(Math.floor(VIEW_RADIUS / 2)) * TILE_DIMENTIONS}px`;
-export let cords = {player.style.left ,player.style.top } 
+export let cords = {player.style.left ,player.style.top ,num} 
 
 })
 
