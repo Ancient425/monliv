@@ -2,8 +2,10 @@ from flask import Flask
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
-socketio = SocketIO(app)
-
+socketio = SocketIO(
+    app,
+    cors_allowed_origins="*"
+)
 @socketio.on("connect")
 def on_connect():
     print("Client connected!")
