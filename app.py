@@ -15,4 +15,8 @@ def test_xd(msg):
     print("Received:", msg)
     socketio.emit("test_back", f"{msg} sent ✅️")
 
+@socket.on("cords")
+def move():
+    pass
+
 socketio.run(app, debug=True)
