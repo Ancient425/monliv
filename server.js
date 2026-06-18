@@ -8,3 +8,7 @@ import {cords} from './index.js';
 
 socketio.emit("player_cords", "cords");
 
+socket.on("", (cords) => {
+
+});
+
