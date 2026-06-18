@@ -1,3 +1,6 @@
+:root{
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,18 +9,19 @@
 }
 
 body{
-    width:80vw;
-    height:75vh;
+    width:100vw;
+    height:100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .view{
    position: relative;
-   /* overflow:hidden; */
+   overflow:hidden;
    outline:2px solid blue;
-   background:rgba(255, 0, 0, 0.283);
+   /* background:rgba(255, 0, 0, 0.283); */
    z-index: 3;
 }
 
@@ -42,3 +46,33 @@ body{
     background-color: rgba(0, 0, 255, 0.461);
     position: absolute;
 }
+
+.player
+
+.buttons{
+    margin:10px;
+    padding:10px;
+    height:75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    background:rgba(0,0,0,0.234);
+    border-radius:20px;
+}
+
+.buttons > button{
+    width:55px;
+    height:55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:10px;
+    border:none;
+    outline: none;
+}
+
+.buttons > button > img{
+    height:30px;
+    width:30px;
+}
+
