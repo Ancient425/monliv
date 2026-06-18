@@ -8,8 +8,8 @@ socketio = SocketIO(app)
 def on_connect():
     print("Client connected!")
 
-@socketio.on("message")
-def on_message(msg):
+@socketio.on("test")
+def test_xd(msg):
     print("Received:", msg)
     socketio.send(f"Server received: {msg}")
 
