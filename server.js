@@ -6,3 +6,5 @@ socket.on("test_back", (msg) => {
 
 import {cords} from './index.js'
 
+socketio.emit("player_cords", "cords")
+
