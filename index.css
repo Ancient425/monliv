@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition:all 0.4s ease;
+}
+
+body{
+    width:80vw;
+    height:75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view{
+   position: relative;
+   /* overflow:hidden; */
+   outline:2px solid blue;
+   background:rgba(255, 0, 0, 0.283);
+   z-index: 3;
+}
+
+.tile{
+    outline:1px solid black;  
+    font-size:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    z-index: 1;
+}
+
+.map{
+    position: absolute;
+    display:grid;
+}
+
+.player{
+    z-index: 200;
+    width:75px;
+    height: 75px;
+    background-color: rgba(0, 0, 255, 0.461);
+    position: absolute;
+}
