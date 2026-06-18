@@ -4,7 +4,7 @@ socket.on("test_back", (msg) => {
     console.log(msg);
 });
 
-import {cords} from './index.js'
+import {cords} from './index.js';
 
-socketio.emit("player_cords", "cords")
+socketio.emit("player_cords", "cords");
 
