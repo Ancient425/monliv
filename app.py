@@ -13,4 +13,4 @@ def test_xd(msg):
     print("Received:", msg)
     socketio.send(f"Server received: {msg}")
 
-    socketio.run(app, debug=True)
+socketio.run(app, debug=True)
