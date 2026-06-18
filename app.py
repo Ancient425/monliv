@@ -13,6 +13,6 @@ def on_connect():
 @socketio.on("test")
 def test_xd(msg):
     print("Received:", msg)
-    socketio.send(f"Server received: {msg}")
+    socketio.emit("test_back", f"{msg} sent ✅️")
 
 socketio.run(app, debug=True)
