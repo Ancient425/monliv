@@ -22,7 +22,11 @@ window.addEventListener("load", () => {
     player.style.height = `${TILE_DIMENTIONS}px`
     player.style.top = `${((Math.floor(VIEW_RADIUS / 2)) + 2) * TILE_DIMENTIONS}px`;
     player.style.left = `${(Math.floor(VIEW_RADIUS / 2)) * TILE_DIMENTIONS}px`;
-let cords = {player.style.left ,player.style.top ,num} 
+export let cords = {
+    left: player.style.left,
+    top: player.style.top,
+    id: num
+};
 console.log(cords)
 
 })
