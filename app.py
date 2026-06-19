@@ -6,6 +6,16 @@ socketio = SocketIO(
     app,
     cors_allowed_origins="*"
 )
+
+
+def game_loop():
+    while True:
+        socketio.emit("game_state", {"players": players})
+        socketio.sleep(0.05)  # gng 50ms 
+
+socketio.start_background_task(game_loop)
+
+
 @socketio.on("connect")
 def on_connect():
     print("Client connected!")
