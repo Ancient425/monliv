@@ -23,6 +23,7 @@ window.addEventListener("load", () => {
     player.style.top = `${((Math.floor(VIEW_RADIUS / 2)) + 2) * TILE_DIMENTIONS}px`;
     player.style.left = `${(Math.floor(VIEW_RADIUS / 2)) * TILE_DIMENTIONS}px`;
 export let cords = {player.style.left ,player.style.top ,num} 
+console.log(cords)
 
 })
 
@@ -125,10 +126,12 @@ const up = get(".up"),
 up.addEventListener("touchstart", () => {
     moveCamara("top", 75)
     movePlayer("top", -75)
+    console.log(cords)
 })
 down.addEventListener("touchstart", () => {
     moveCamara("top", -75)
     movePlayer("top", 75)
+    console.log(cords)
 })
 left.addEventListener("touchstart", () => {
     moveCamara("left", 75)
