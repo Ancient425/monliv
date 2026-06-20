@@ -10,6 +10,9 @@ const map = get(".map");
 const player = get(".player");
 const body = get("body")
 const buttons = get(".buttons")
+// temporary player id
+const num = Math.floor(Math.random() * 900) + 100;
+
 
 window.addEventListener("load", () => {
     map.style.top = "0px";
@@ -21,6 +24,12 @@ window.addEventListener("load", () => {
     player.style.left = `${(Math.floor(VIEW_RADIUS / 2)) * TILE_DIMENTIONS}px`;
 
 })
+let cords = {
+    left: player.style.left,
+    top: player.style.top,
+    id: num
+}
+//socketio.emit("connect", "cords");
 
 // dimentions of the camara i.e. view
 
@@ -137,4 +146,7 @@ right.addEventListener("click", () => {
     moveCamara("left", -75)
     movePlayer("left", 75)
 })
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7e462930f7c95fdc522247b4492f3ab888472d98
