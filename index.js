@@ -3,13 +3,14 @@ const getAll = (dom) => { return document.querySelectorAll(dom) }
 
 const TILE_DIMENTIONS = 75; // in pixels
 const VIEW_RADIUS = 5; // in tiles er side
-const MAP_DIMENTIONS = 33; // in tiles per side
+const MAP_DIMENTIONS = 50; // in tiles per side
 
 const view = get(".view");
 const map = get(".map");
 const player = get(".player");
 const body = get("body")
 const buttons = get(".buttons")
+
 // temporary player id
 const num = Math.floor(Math.random() * 900) + 100;
 
@@ -52,6 +53,7 @@ for (let i = 0; i < MAP_DIMENTIONS ** 2; i++) {
     div.classList.add("tile")
     div.classList.add(`tile${i}`)
 
+    // div.innerHTML = i;   
     div.style.width = `${TILE_DIMENTIONS}px`
     div.style.height = `${TILE_DIMENTIONS}px`
 
@@ -96,6 +98,20 @@ const movePlayer = (direction, pixels) => {
     } else {
         return "err";
     }
+
+    // Get current tile position
+    let currentTop = parseInt(getComputedStyle(player).top);
+    let currentLeft = parseInt(getComputedStyle(player).left);
+    let tileRow = currentTop / TILE_DIMENTIONS;
+    let tileCol = currentLeft / TILE_DIMENTIONS;
+    let tileIndex = Math.round(tileRow) * MAP_DIMENTIONS + Math.round(tileCol);
+    
+    let currentTile = get(`.tile${tileIndex}`);
+    currentTile.classList.add("animate");
+
+    setTimeout(() => {
+        currentTile.classList.remove("animate");
+    },2000);
 }
 
 // long press button
