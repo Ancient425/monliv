@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_socketio import SocketIO
-from myfunc import check_if_p
+from myfunc import check_for_p
 
 app = Flask(__name__)
 socketio = SocketIO(
