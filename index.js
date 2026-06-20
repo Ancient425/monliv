@@ -112,7 +112,6 @@ const movePlayer = (direction, pixels) => {
     setTimeout(() => {
         currentTile.classList.remove("animate");
     },1000);
-}
 
 // long press button
 
