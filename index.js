@@ -24,11 +24,14 @@ window.addEventListener("load", () => {
     player.style.left = `${(Math.floor(VIEW_RADIUS / 2)) * TILE_DIMENTIONS}px`;
 
 });
-export let cords = {
-    left: player.style.left,
-    top: player.style.top,
-    id: num }
-console.log(cords)
+export function getCords() {
+    return {
+        left: player.style.left,
+        top: player.style.top,
+        id: num
+    };
+}
+console.log(getcords())
 
 
 
