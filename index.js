@@ -24,6 +24,7 @@ window.addEventListener("load", () => {
     player.style.left = `${(Math.floor(VIEW_RADIUS / 2)) * TILE_DIMENTIONS}px`;
 
 })
+
 let cords = {
     left: player.style.left,
     top: player.style.top,
@@ -105,7 +106,7 @@ const movePlayer = (direction, pixels) => {
 
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft" || e.key == "A" || e.key == "a") {
-        moveCamara("left", 75)
+        moveCamara("left", 75)      
         movePlayer("left", -75)
     } else if (e.key === "ArrowRight" || e.key == "D" || e.key == "d") {
         moveCamara("left", -75)
@@ -146,7 +147,3 @@ right.addEventListener("click", () => {
     moveCamara("left", -75)
     movePlayer("left", 75)
 })
-<<<<<<< HEAD
-
-=======
->>>>>>> 7e462930f7c95fdc522247b4492f3ab888472d98
