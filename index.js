@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
     player.style.left = `${(Math.floor(VIEW_RADIUS / 2)) * TILE_DIMENTIONS}px`;
 
 })
-export let cords = {
+let cords = {
     left: player.style.left,
     top: player.style.top,
     id: num
