@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
 export let cords = {
     left: player.style.left,
     top: player.style.top,
-    id: num
+    id: num }
 console.log(cords)
 
 })
