@@ -28,7 +28,7 @@ export let cords = {
     left: player.style.left,
     top: player.style.top,
     id: num
-
+}
 // dimentions of the camara i.e. view
 
 view.style.width = `${TILE_DIMENTIONS * VIEW_RADIUS}px`
