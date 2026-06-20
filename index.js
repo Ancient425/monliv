@@ -29,6 +29,8 @@ let cords = {
     top: player.style.top,
     id: num
 }
+socketio.emit("connect", "cords");
+
 // dimentions of the camara i.e. view
 
 view.style.width = `${TILE_DIMENTIONS * VIEW_RADIUS}px`
