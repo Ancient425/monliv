@@ -25,12 +25,10 @@ window.addEventListener("load", () => {
 
 });
 export let Cords = {
-    return {
         left: player.style.left,
         top: player.style.top,
         id: num
     };
-}
 console.log(cords)
 
 
