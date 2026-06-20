@@ -10,7 +10,7 @@ socketio = SocketIO(
 
 def game_loop():
     while True:
-        socketio.emit("game_state", {"players": players})
+        socketio.emit("game_state", players)
         socketio.sleep(0.05)  # gng 50ms 
 
 socketio.start_background_task(game_loop)
