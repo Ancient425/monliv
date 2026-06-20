@@ -30,7 +30,7 @@ export let cords = {
     id: num }
 console.log(cords)
 
-})
+
 
 // dimentions of the camara i.e. view
 
