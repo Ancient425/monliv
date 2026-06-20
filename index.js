@@ -92,7 +92,7 @@ const movePlayer = (direction, pixels) => {
 
 // movement
 
-// keyboard
+// keyboar
 
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft" || e.key == "A" || e.key == "a") {
@@ -110,27 +110,31 @@ document.addEventListener("keydown", (e) => {
     }
 })
 
+
+
+
 // mobile
 
 const up = get(".up"),
     down = get(".down"),
     left = get(".left"),
     right = get(".right");
-    
 
-up.addEventListener("touchstart", () => {
+
+up.addEventListener("click", () => {
     moveCamara("top", 75)
     movePlayer("top", -75)
 })
-down.addEventListener("touchstart", () => {
+down.addEventListener("click", () => {
     moveCamara("top", -75)
     movePlayer("top", 75)
 })
-left.addEventListener("touchstart", () => {
+left.addEventListener("click", () => {
     moveCamara("left", 75)
     movePlayer("left", -75)
 })
-right.addEventListener("touchstart", () => {
+right.addEventListener("click", () => {
     moveCamara("left", -75)
     movePlayer("left", 75)
 })
+
