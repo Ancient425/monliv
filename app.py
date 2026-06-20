@@ -22,7 +22,7 @@ socketio.start_background_task(game_loop)
 def on_connect(cords):
     print("Client connected!")
 
-    check_for_p(cords,players)
+    players = check_for_p(cords,players)
 
 @socketio.on("test")
 def test_xd(msg):
