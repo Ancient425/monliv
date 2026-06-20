@@ -45,11 +45,7 @@ body {
 }
 
 .animate{
-<<<<<<< HEAD
     animation: fadee 1s ease-out 1;
-=======
-    animation: fadee 2s ease 1;
->>>>>>> 1c81efda79120dfae16ba7dde003263b9c4a5ee1
 }
 
 @keyframes fadee {

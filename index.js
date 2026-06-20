@@ -112,7 +112,7 @@ const movePlayer = (direction, pixels) => {
     setTimeout(() => {
         currentTile.classList.remove("animate");
     },1000);
-
+}
 // long press button
 
 const repeatActions = {};
@@ -196,4 +196,4 @@ const bindHold = (element, action, key) => {
 bindHold(up, moveUp, "up");
 bindHold(down, moveDown, "down");
 bindHold(left, moveLeft, "left");
-bindHold(right, moveRight, "right");
+bindHold(right, moveRight, "right")
