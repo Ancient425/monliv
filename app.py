@@ -8,6 +8,7 @@ socketio = SocketIO(
     cors_allowed_origins="*"
 )
 
+players = {}
 
 def game_loop():
     while True:
@@ -18,8 +19,10 @@ socketio.start_background_task(game_loop)
 
 
 @socketio.on("connect")
-def on_connect():
+def on_connect(cords):
     print("Client connected!")
+
+    check_for_p(cords,players)
 
 @socketio.on("test")
 def test_xd(msg):
