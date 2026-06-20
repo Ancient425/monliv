@@ -14,14 +14,6 @@ const buttons = get(".buttons")
 const num = Math.floor(Math.random() * 900) + 100;
 
 
-const socket = io("http://127.0.0.1:5000");
-
-socket.on("test_back", (msg) => {
-    console.log(msg);
-});
-
-
-
 window.addEventListener("load", () => {
     map.style.top = "0px";
     map.style.left = "0px";
@@ -38,7 +30,7 @@ let cords = {
     top: player.style.top,
     id: num
 }
-socketio.emit("connect", cords);
+//socketio.emit("connect", "cords");
 
 // dimentions of the camara i.e. view
 
@@ -86,6 +78,8 @@ const moveCamara = (direction, pixels) => {
     }
 }
 
+// helper functions
+
 const movePlayer = (direction, pixels) => {
     let top = parseInt(getComputedStyle(player).top);    // get current cords
     let left = parseInt(getComputedStyle(player).left);  // get current cords
@@ -103,6 +97,22 @@ const movePlayer = (direction, pixels) => {
         return "err";
     }
 }
+
+// long press button
+
+const repeatActions = {};
+
+const startRepeatAction = (key, action) => {
+    if (repeatActions[key]) return;
+    action();
+    repeatActions[key] = setInterval(action, 100);
+};
+
+const stopRepeatAction = (key) => {
+    if (!repeatActions[key]) return;
+    clearInterval(repeatActions[key]);
+    delete repeatActions[key];
+};
 
 // movement
 
@@ -126,28 +136,49 @@ document.addEventListener("keydown", (e) => {
 
 
 
-
 // mobile
-
 const up = get(".up"),
     down = get(".down"),
     left = get(".left"),
     right = get(".right");
 
-
-up.addEventListener("click", () => {
+const moveUp = () => {
     moveCamara("top", 75)
     movePlayer("top", -75)
-})
-down.addEventListener("click", () => {
+};
+const moveDown = () => {
     moveCamara("top", -75)
     movePlayer("top", 75)
-})
-left.addEventListener("click", () => {
+};
+const moveLeft = () => {
     moveCamara("left", 75)
     movePlayer("left", -75)
-})
-right.addEventListener("click", () => {
+};
+const moveRight = () => {
     moveCamara("left", -75)
     movePlayer("left", 75)
-})
+};
+
+const bindHold = (element, action, key) => {
+    if (!element) return;
+    const start = (e) => {
+        e.preventDefault();
+        startRepeatAction(key, action);
+    };
+    const stop = () => {
+        stopRepeatAction(key);
+    };
+
+    element.addEventListener("mousedown", start);
+    element.addEventListener("touchstart", start, { passive: false });
+    element.addEventListener("mouseup", stop);
+    element.addEventListener("mouseleave", stop);
+    element.addEventListener("touchend", stop);
+    element.addEventListener("touchcancel", stop);
+    element.addEventListener("click", action);
+};
+
+bindHold(up, moveUp, "up");
+bindHold(down, moveDown, "down");
+bindHold(left, moveLeft, "left");
+bindHold(right, moveRight, "right");
