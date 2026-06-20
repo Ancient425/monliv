@@ -1,5 +1,3 @@
-:root {}
-
 * {
     margin: 0;
     padding: 0;
@@ -18,9 +16,9 @@ body {
 
 .view {
     position: relative;
-    overflow: hidden;
     outline: 2px solid blue;
     /* background:rgba(255, 0, 0, 0.283); */
+    overflow: hidden;
     z-index: 3;
 }
 
@@ -44,6 +42,20 @@ body {
     height: 75px;
     background-color: rgba(0, 0, 255, 0.461);
     position: absolute;
+}
+
+.animate{
+    animation: fadee 1s ease-out 1;
+}
+
+@keyframes fadee {
+    from{
+        background:rgba(255, 255, 0, 0.345);
+    }
+
+    to{
+        background:white;
+    }
 }
 
 .buttonContainer>div>button {
