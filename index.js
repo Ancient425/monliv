@@ -14,6 +14,14 @@ const buttons = get(".buttons")
 const num = Math.floor(Math.random() * 900) + 100;
 
 
+const socket = io("http://127.0.0.1:5000");
+
+socket.on("test_back", (msg) => {
+    console.log(msg);
+});
+
+
+
 window.addEventListener("load", () => {
     map.style.top = "0px";
     map.style.left = "0px";
@@ -30,7 +38,7 @@ let cords = {
     top: player.style.top,
     id: num
 }
-//socketio.emit("connect", "cords");
+socketio.emit("connect", cords);
 
 // dimentions of the camara i.e. view
 
