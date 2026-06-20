@@ -1,76 +1,92 @@
-:root{
-}
+:root {}
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition:all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
-body{
-    width:100vw;
-    height:100vh;
+body {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.view{
-   position: relative;
-   overflow:hidden;
-   outline:2px solid blue;
-   /* background:rgba(255, 0, 0, 0.283); */
-   z-index: 3;
+.view {
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid blue;
+    /* background:rgba(255, 0, 0, 0.283); */
+    z-index: 3;
 }
 
-.tile{
-    outline:1px solid black;  
-    font-size:40px;
+.tile {
+    outline: 1px solid black;
+    font-size: 40px;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
     z-index: 1;
 }
 
-.map{
+.map {
     position: absolute;
-    display:grid;
+    display: grid;
 }
 
-.player{
+.player {
     z-index: 200;
-    width:75px;
+    width: 75px;
     height: 75px;
     background-color: rgba(0, 0, 255, 0.461);
     position: absolute;
 }
 
-.buttons{
-    margin:10px;
-    padding:10px;
-    height:75px;
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    background:rgba(0,0,0,0.234);
-    border-radius:20px;
-}
-
-.buttons > button{
-    width:55px;
-    height:55px;
+.buttonContainer>div>button {
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius:10px;
-    border:none;
+    border-radius: 10px;
+    border: none;
     outline: none;
+    clip-path: polygon(0% 10%, 10% 10%, 10% 0%, 90% 0%, 90% 10%, 100% 10%, 100% 90%, 90% 90%, 90% 100%, 10% 100%, 10% 90%, 0% 90%);
+    background-color: rgba(240, 240, 240, 0.4);
 }
 
-.buttons > button > img{
-    height:30px;
-    width:30px;
+.buttonContainer>div>button>img {
+    height: 25px;
+    width: 25px;
 }
 
+
+.buttonContainer {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%,85% 0%,85% 15%, 100% 15%, 100%85%,85%85%,85% 100%, 15% 100%, 15%85%, 0%85%);
+    padding:10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.leftbtn , .rightbtn{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+}
+
+.centerbtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}

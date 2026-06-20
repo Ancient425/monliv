@@ -47,10 +47,6 @@ map.style.height = `${TILE_DIMENTIONS * MAP_DIMENTIONS}px`
 map.style.gridTemplateColumns = `repeat(${MAP_DIMENTIONS} , 1fr)`
 map.style.gridTemplateRows = `repeat(${MAP_DIMENTIONS} , 1fr)`
 
-// dimentions of other things
-
-buttons.style.width = `${TILE_DIMENTIONS * VIEW_RADIUS}px`
-
 for (let i = 0; i < MAP_DIMENTIONS ** 2; i++) {
     let div = document.createElement("div");
     div.classList.add("tile")
@@ -106,7 +102,7 @@ const movePlayer = (direction, pixels) => {
 
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft" || e.key == "A" || e.key == "a") {
-        moveCamara("left", 75)      
+        moveCamara("left", 75)
         movePlayer("left", -75)
     } else if (e.key === "ArrowRight" || e.key == "D" || e.key == "d") {
         moveCamara("left", -75)
