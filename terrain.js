@@ -1,7 +1,9 @@
 export const TERRAIN = {
   seed: 12345,
-  noiseScale: 15,
-  octaves: 5,
+  noiseScale: 5,
+  octaves: 7,
+  persistence: 0.7,
+  contrast: 2.2,
   textures: [
     { from: 0, to: 30, name: "water", color: "#4688bc", src: "" },
     { from: 30, to: 40, name: "sand", color: "#ddc38b", src: "" },
@@ -37,10 +39,11 @@ export function getHeight(x, y) {
     value += noise(x / TERRAIN.noiseScale * frequency,
       y / TERRAIN.noiseScale * frequency) * amplitude;
     total += amplitude;
-    amplitude *= 0.5;
+    amplitude *= TERRAIN.persistence;
     frequency *= 2;
   }
-  return (value / total) * 100;
+  // Stretch the height distribution so water and mountains appear more often.
+  return Math.max(0, Math.min(100, 50 + ((value / total) - 0.5) * 100 * TERRAIN.contrast));
 }
 export function getBiome(height) {
   return TERRAIN.textures.find(t => height >= t.from && height < t.to)
