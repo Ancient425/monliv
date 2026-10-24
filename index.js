@@ -1,3 +1,4 @@
+import { paintTile } from "./terrain.js";
 const get = (dom) => { return document.querySelector(dom) }
 const getAll = (dom) => { return document.querySelectorAll(dom) }
 
@@ -48,17 +49,16 @@ map.style.height = `${TILE_DIMENTIONS * MAP_DIMENTIONS}px`
 map.style.gridTemplateColumns = `repeat(${MAP_DIMENTIONS} , 1fr)`
 map.style.gridTemplateRows = `repeat(${MAP_DIMENTIONS} , 1fr)`
 
+const terrainTiles = document.createDocumentFragment();
 for (let i = 0; i < MAP_DIMENTIONS ** 2; i++) {
-    let div = document.createElement("div");
-    div.classList.add("tile")
-    div.classList.add(`tile${i}`)
-
-    // div.innerHTML = i;   
-    div.style.width = `${TILE_DIMENTIONS}px`
-    div.style.height = `${TILE_DIMENTIONS}px`
-
-    map.appendChild(div)
+    const div = document.createElement("div");
+    div.classList.add("tile", `tile${i}`);
+    div.style.width = `${TILE_DIMENTIONS}px`;
+    div.style.height = `${TILE_DIMENTIONS}px`;
+    paintTile(div, i % MAP_DIMENTIONS, Math.floor(i / MAP_DIMENTIONS));
+    terrainTiles.appendChild(div);
 }
+map.appendChild(terrainTiles);
 
 // camara view function
 
